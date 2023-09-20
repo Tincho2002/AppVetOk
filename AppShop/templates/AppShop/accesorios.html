@@ -1,0 +1,33 @@
+{% extends 'AppShop/base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+<br></br>
+<div class="container">
+    <div class="card card-container">
+        <br></br>
+        <h3 class="text-center"> Vista de Accesorios de VetOk!</h3>
+        <br></br>
+        <ul>
+            <table class="table table-striped table-bordered">
+                <li class="p-3 mb-2 bg-success text-white">"PER-ROS", "Bolso", Gato, Mochila Tipo Morral Chica 38x10x20
+                    Cm</li>
+                <li class="p-3 mb-2 bg-success text-white">"MILLEX", "Mamadera", Perro, Mamadera Angular Con Cepillo 180
+                    Ml</li>
+                <li class="p-3 mb-2 bg-success text-white">"KONIG", "Difursor", Perro, Repuesto Serenex Difusor Canino
+                    42 Ml</li>
+            </table>
+        </ul>
+
+        <h3 class="text-center">Accesorios agregados:</h3>
+        <br></br>
+        <table class="table table-striped table-bordered">
+            {% for accesorio in accesorios %}
+            <li class="p-3 mb-2 bg-info text-white">{{accesorio.marca}}</li>
+            {% endfor %}
+            </br>
+        </table>
+    </div>
+</div>
+{% endblock contenidoQCambia %}

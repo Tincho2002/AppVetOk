@@ -1,0 +1,22 @@
+{% extends 'AppShop/base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+    <br></br>
+    <div class="container">
+        <div class="card card-container">
+            <br></br>
+            <h3 class="text-center">Formulario para agregar Alimentos</h3>
+            <br></br>
+            <form action="{% url 'AgregarAlimentos' %}" method="POST">{% csrf_token %}
+                <table class="table table-striped table-bordered">
+                    {{mi_formulario.as_table}}
+                </table>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin"  type="submit"> Agregar </button>
+            </form>
+        </div>
+    </div>
+    <br></br>
+{% endblock contenidoQCambia %}

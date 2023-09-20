@@ -1,0 +1,25 @@
+{% extends 'AppShop/base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+<br></br>
+<div class="container">
+    <div class="card card-container">
+        <br></br>
+        <h3 class="text-center">Formulario para buscar alimentos por mascota</h3>
+        <br></br>
+        <form action="{% url 'Buscar' %}" method="GET" class="table table-striped table-bordered">{% csrf_token %}
+            <ul class="text-center">Inserte la mascota que queres buscar: 
+                <br>
+                <input class="text-center" type="text" name="mascota" id="">
+                </br>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"> Buscar </button>
+                </br>
+            </ul>        
+        </form>
+    </div>
+</div>
+</br>
+{% endblock contenidoQCambia %}

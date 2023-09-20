@@ -1,0 +1,26 @@
+{% extends 'AppShop/base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+<br></br>
+<div class="container">
+    <div class="card card-container">
+        <h3 class="p-3 mb-2 bg-primary text-white">Los alimentos que hay para {{mascota}} son:</h3>
+        <table>
+            {% if alimentos %}
+            <ul>
+                {% for alimento in alimentos %}
+                    <li class="p-3 mb-2 bg-success text-white">
+                        {{alimento.marca}} - {{alimento.mascota}}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <h4 class="p-3 mb-2 bg-danger text-white">No se encontró ninguna alimento para esta mascota</h4>
+            {% endif %}
+        </table>
+    </div>
+</div>
+</br>        
+{% endblock contenidoQCambia %}

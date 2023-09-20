@@ -1,0 +1,32 @@
+{% extends 'AppShop/base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+<br></br>
+<div class="container">
+    <div class="card card-container">
+        <br></br>
+        <h3 class="text-center"> Vista de Alimentos de VetOk!</h3>
+        <br></br>
+        <ul>
+            <table class="table table-striped table-bordered">
+                <li class="p-3 mb-2 bg-success text-white">"EXCELLENT", "Seco", Gato, Adult Cat Smart 7,5kg</li>
+                <li class="p-3 mb-2 bg-success text-white">"OLDPRINCE", "Seco", Perro, Novel Cordero Y Arroz Adultos
+                    Large 15kg + 3kg Regalo</li>
+                <li class="p-3 mb-2 bg-success text-white">"OPTIMUM", "Humedo", Gato, Pouch Gatos Castrados 85grs</li>
+            </table>
+        </ul>
+
+        <h3 class="text-center">Alimentos agregados:</h3>
+        <br></br>
+        <table class="table table-striped table-bordered">
+            {% for alimento in alimentos %}
+            <li class="p-3 mb-2 bg-info text-white">{{alimento.marca}}</li>
+            {% endfor %}
+            <br>
+        </table>
+    </div>
+</div>
+<br></br>
+{% endblock contenidoQCambia %}
